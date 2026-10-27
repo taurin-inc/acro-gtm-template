@@ -1,0 +1,5 @@
+homepage: "https://acro.sh"
+documentation: "https://github.com/taurin-inc/acro-gtm-template#readme"
+versions:
+  - sha: 0d5237790a0331560d834e6b2715813eeb648751
+    changeNotes: Initial release.
