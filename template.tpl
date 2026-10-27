@@ -578,7 +578,7 @@ ___WEB_PERMISSIONS___
 ___TESTS___
 
 scenarios:
-- name: Base code loads acro.js for the write key
+- name: Base code loads the pixel for the write key
   code: |-
     runCode({ writeKey: 'acro_pk_test123', eventType: 'pageView' });
     assertThat(injected).isEqualTo(['https://t.acro.sh/s/acro_pk_test123.js']);
@@ -590,7 +590,7 @@ scenarios:
     runCode({ writeKey: 'not-a-key', eventType: 'pageView' });
     assertApi('injectScript').wasNotCalled();
     assertApi('gtmOnFailure').wasCalled();
-- name: Purchase is queued before acro.js loads
+- name: Purchase is queued before the pixel loads
   code: |-
     runCode({
       writeKey: 'acro_pk_test123',
@@ -612,7 +612,7 @@ scenarios:
       }],
     ]);
     assertApi('gtmOnSuccess').wasCalled();
-- name: The GA4 ecommerce object fills a purchase, tag fields win
+- name: The GA4 ecommerce object fills a purchase and tag fields win
   code: |-
     mock('copyFromDataLayer', (key) => key === 'ecommerce' ? {
       transaction_id: 'T-1',
